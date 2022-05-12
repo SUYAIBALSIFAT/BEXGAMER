@@ -18,8 +18,9 @@ const bookingRoutes = require('./routes/bookingRoutes');
 //const start = Date.now();
 
 process.env.UV_THREADPOOL_SIZE = 4;
-
 const app = express();
+app.enable('trust proxy');
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
