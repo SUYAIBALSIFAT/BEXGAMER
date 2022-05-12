@@ -61,7 +61,6 @@ TournamentSchema.index({ slug: 1 });
 
 TournamentSchema.pre('save', function(next) {
   this.slug = slugify(this.name, { lower: true });
-  console.log(this.slug);
   next();
 });
 const Tournament = mongoose.model('Tournament', TournamentSchema);

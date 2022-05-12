@@ -29,7 +29,6 @@ if (userDataForm)
 
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
 
     updateSettings(form, 'data');
   });
@@ -55,7 +54,6 @@ if (userPasswordForm)
 
 if (bookBtn)
   bookBtn.addEventListener('click', e => {
-    console.log(e.target.dataset);
     e.target.textContent = 'Processing...';
     const { tourId } = e.target.dataset;
     console.log(tourId);

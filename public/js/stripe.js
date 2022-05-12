@@ -9,9 +9,8 @@ export const bookTour = async tournamentId => {
   try {
     // 1) Get checkout session from API
     const session = await axios(
-      `http://127.0.0.1:3000/api/v1/booking/checkout-session/${tournamentId}`
+      `/api/v1/booking/checkout-session/${tournamentId}`
     );
-    console.log(session);
 
     // 2) Create checkout form + chanre credit card
     const stripe = await loadStripe(
@@ -21,7 +20,6 @@ export const bookTour = async tournamentId => {
       sessionId: session.data.session.id
     });
   } catch (err) {
-    console.log(err);
     showAlert('error', err);
   }
 };
