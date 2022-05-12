@@ -4,12 +4,9 @@ const authController = require('./../contoroller/authController');
 const bookingController = require('../contoroller/bookingController');
 
 const router = express.Router();
-router.get(
-  '/',
-  bookingController.createBookingCheckout,
-  authController.isLoggedIn,
-  viewController.getOverview
-);
+router.use(viewController.alerts);
+
+router.get('/', authController.isLoggedIn, viewController.getOverview);
 
 router.get(
   '/tournament/:slug',
