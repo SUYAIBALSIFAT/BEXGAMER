@@ -1,0 +1,42 @@
+extends base
+block content
+  section.section-header
+    .header__hero
+      .header__hero-overlay &nbsp;
+      img.header__hero-img(src=`/img/tours/${tournament.imgcover}`, alt=`${tournament.name}`)
+
+    .heading-box
+      h1.heading-primary
+        span= `${tournament.name} tour`
+      .heading-box__group
+        .heading-box__detail
+          svg.heading-box__icon
+            use(xlink:href='/img/icons.svg#icon-clock')
+          span.heading-box__text= `${tournament.slug} days`
+        .heading-box__detail
+          
+
+  
+
+    
+  section.section-pictures
+    each img, i in tournament.img
+      .picture-box
+        img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
+
+  
+
+  section.section-cta
+    .cta
+      .cta__img.cta__img--logo
+        img(src='/css/logo-white.png', alt='Natours logo')
+      img.cta__img.cta__img--1(src=`/img/tours/${tournament.img[1]}`, alt='Tour picture')
+      img.cta__img.cta__img--2(src=`/img/tours/${tournament.img[2]}`, alt='Tour picture')
+      .cta__content
+        h2.heading-secondary What are you waiting for?
+        p.cta__text= `${tournament.slug} days. 1 adventure. Infinite memories. Make it yours today!`
+        
+        if user
+          button.btn.btn--green.span-all-rows#book-tour(data-tour-id=`${tournament._id}`) Book tour now!
+        else
+          a.btn.btn--green.span-all-rows(href='/login') Log in to book tour

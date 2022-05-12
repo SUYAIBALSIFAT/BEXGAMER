@@ -1,0 +1,62 @@
+[
+  {
+    "name": "PUBG MOBILE",
+    "fee": 5,
+    "winnerAouncment": "2023-07-22",
+    "closeOn": "2023-07-23",
+    "pizePool": 15,
+    "SPORTS LEFT": "50",
+    "PEOPLE ENTER": "50%",
+    "img": "PUBG.img",
+    "region": "ANY region",
+    "teamSize": "SOLO",
+    "playersInMatch": 100,
+    "platform": "MOBILE",
+    "TIME LEFT TO ENTER": "11:22:20"
+  },
+  {
+    "name": "FORNITE MOBILE",
+    "fee": 15,
+    "winnerAouncment": "2023-07-22",
+    "closeOn": "2023-07-23",
+    "pizePool": 15,
+    "SPORTS LEFT": "50",
+    "PEOPLE ENTER": "50%",
+    "img": "FORNITE.img",
+    "region": "ANY region",
+    "teamSize": "SOLO",
+    "playersInMatch": 100,
+    "platform": "MOBILE",
+    "TIME LEFT TO ENTER": "11:22:20"
+  },
+  {
+    "name": "FREEFIRE MOBILE",
+    "fee": 10,
+    "winnerAouncment": "2023-07-22",
+    "closeOn": "2023-07-23",
+    "pizePool": 15,
+    "SPORTS LEFT": "50",
+    "PEOPLE ENTER": "50%",
+    "img": "FREEFIRE.img",
+    "region": "ANY region",
+    "teamSize": "SOLO",
+    "playersInMatch": 100,
+    "platform": "MOBILE",
+    "TIME LEFT TO ENTER": "11:22:20"
+  },
+  {
+    "name": "PUBG MOBILE SOLO",
+    "fee": 5,
+    "winnerAouncment": "2023-07-22",
+    "closeOn": "2023-07-23",
+    "pizePool": 15,
+    "SPORTS LEFT": "50",
+    "PEOPLE ENTER": "50%",
+    "img": "PUBG.img",
+    "region": "ANY region",
+    "teamSize": "SOLO",
+    "playersInMatch": 100,
+    "platform": "MOBILE",
+    "TIME LEFT TO ENTER": "11:22:20"
+  }
+]

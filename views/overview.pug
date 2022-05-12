@@ -1,0 +1,43 @@
+extends base
+
+block content
+ main.main
+  .card-container
+   each Tournament in Tournaments
+    .card
+      .card__header
+        .card__picture
+          .card__picture-overlay &nbsp;
+          img.card__picture-img(src='/img/tours/tour-1-cover.jpg', alt=`${Tournament.name}`)
+        h3.heading-tertirary
+          span= Tournament.name
+
+      .card__details
+        h4.card__sub-heading= `PIZEPOOL ${Tournament.fee}$`
+        p.card__text BE A X GAMEFR TODAY BY ENTERING
+        .card__data
+          svg.card__icon
+            use(xlink:href='/img/icons.svg#icon-map-pin')
+          span=`${Tournament.platform}`
+        .card__data
+          svg.card__icon
+            use(xlink:href='/img/icons.svg#icon-calendar')
+          span= Tournament.winnerAouncment.toLocaleString('en-us',{month: 'long',year: 'numeric'})
+        .card__data
+          svg.card__icon
+            use(xlink:href='/img/icons.svg#icon-flag')
+          |       
+          span=Tournament.teamSize
+        .card__data
+          svg.card__icon
+            use(xlink:href='/img/icons.svg#icon-user')
+          span=`${Tournament.playersInMatch} people`
+
+      .card__footer
+        p
+          span.card__footer-value= `$${Tournament.pizePool}`
+          | 
+          span.card__footer-text per person
+        p.card__ratings
+        P # BE X GAMER
+        a.btn.btn--green.btn--small(href=`/tournament/${Tournament.slug}`) Details
