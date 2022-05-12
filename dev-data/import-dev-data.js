@@ -6,7 +6,7 @@ const tournament = require('./../models/tournamentModel');
 dotenv.config({ path: './config.env' });
 
 const DB = process.env.DATABASE.replace(
-  '<password>',
+  'password',
   process.env.DATABASE_PASSWORD
 );
 
