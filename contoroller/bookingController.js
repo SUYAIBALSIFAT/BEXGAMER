@@ -11,7 +11,6 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently booked tour
   // console.log()
   const tour = await Tournament.findById(req.params.tournamentId);
-  console.log('going 1');
 
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
@@ -36,9 +35,6 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       }
     ]
   });
-  console.log('going 2');
-  console.log(session);
-
   // 3) Create session as response
   res.status(200).json({
     status: 'success',
@@ -61,7 +57,7 @@ exports.webhookCheckout = (req, res, next) => {
     event = stripe.webhooks.constructEvent(
       req.body,
       signature,
-      process.env.STRIPE_WEBHOOK_SECRET
+      'whsec_CatDHKiC9ZOpp1aav0YdU1puaesOLi8E'
     );
   } catch (err) {
     return res.status(400).send(`Webhook error: ${err.message}`);
