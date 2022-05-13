@@ -25,14 +25,13 @@ exports.getOverview = catchAsync(async (req, res) => {
 exports.getMyTours = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
   const bookings = await Booking.find({ user: req.user.id });
-
   // 2) Find tours with the returned IDs
   const tourIDs = bookings.map(el => el.tournament);
-  const tours = await Tournament.find({ _id: { $in: tourIDs } });
+  const Tournaments = await Tournament.find({ _id: { $in: tourIDs } });
 
   res.status(200).render('overview', {
     title: 'My Tournaments',
-    tours
+    Tournaments
   });
 });
 

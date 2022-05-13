@@ -1,29 +1,34 @@
-const morgan = require('morgan');
 const path = require('path');
 const express = require('express');
+const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
-const compression = require('compression');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
-const tourRouter = require('./routes/tourRouters');
-const globalErrorHandler = require('./contoroller/errorController');
+const bodyParser = require('body-parser');
+const compression = require('compression');
+const cors = require('cors');
+
 const AppError = require('./utilits/appError');
+const globalErrorHandler = require('./contoroller/errorController');
+const tourRouter = require('./routes/tourRouters');
 const userRouter = require('./routes/userRouters');
-const viewRouters = require('./routes/viewRouters');
+const bookingRouter = require('./routes/bookingRoutes');
 const bookingController = require('./contoroller/bookingController');
-const bookingRoutes = require('./routes/bookingRoutes');
+const viewRouter = require('./routes/viewRouters');
 
-//const start = Date.now();
-
-process.env.UV_THREADPOOL_SIZE = 4;
+// Start express app
 const app = express();
+
 app.enable('trust proxy');
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
+// 1) GLOBAL MIDDLEWARES
+// Implement CORS
 app.use(cors());
 // Access-Control-Allow-Origin *
 // api.natours.com, front-end natours.com
@@ -33,19 +38,17 @@ app.use(cors());
 
 app.options('*', cors());
 // app.options('/api/v1/tours/:id', cors());
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
 
-// 1) GLOBAL MIDDLEWARES
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(morgan('dev'));
-
-app.use(express.json());
-
 // Set security HTTP headers
 // app.use(helmet());
+
+// Development logging
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 // Limit requests from same API
 const limiter = rateLimit({
@@ -63,9 +66,10 @@ app.post(
 );
 
 // Body parser, reading data from body into req.body
-app.use(express.json({ limit: '100kb' }));
-// cookie parser
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
+
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
 
@@ -75,23 +79,36 @@ app.use(xss());
 // Prevent parameter pollution
 app.use(
   hpp({
-    whitelist: ['fee', 'name']
+    whitelist: [
+      'duration',
+      'ratingsQuantity',
+      'ratingsAverage',
+      'maxGroupSize',
+      'difficulty',
+      'price'
+    ]
   })
 );
+
+app.use(compression());
+
+// Test middleware
 app.use((req, res, next) => {
-  req.reqAt = new Date().toISOString();
+  req.requestTime = new Date().toISOString();
   // console.log(req.cookies);
   next();
 });
-app.use(compression());
-// ROUTES
-app.use('/', viewRouters);
-app.use('/api/v1/tournaments', tourRouter);
+
+// 3) ROUTES
+app.use('/', viewRouter);
+app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
-app.use('/api/v1/booking', bookingRoutes);
+app.use('/api/v1/booking', bookingRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
+
 app.use(globalErrorHandler);
+
 module.exports = app;

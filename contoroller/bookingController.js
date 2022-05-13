@@ -1,5 +1,5 @@
 const stripe = require('stripe')(
-  'sk_test_51KyGlcABRDK75FiwvwCovpy4U52JCDLsRI4YhMfR4m6XH9gEByzgKNvx9CfjoCICWGuo5OwAZs5vVyNl24DSN4RE00Pltlkk4CY'
+  `sk_test_51KyGlcABRDK75FiwvwCovpy4U52JCDLsRI4YhMfR4m6XH9gEByzgKNvx9CfjoCICWGuo5OwAZs5vVyNl24DSN4RE00Pltlkk4C`
 );
 const Tournament = require('../models/tournamentModel');
 const User = require('../models/userModel');
@@ -11,7 +11,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently booked tour
   // console.log()
   const tour = await Tournament.findById(req.params.tournamentId);
-  // console.log(tour);
+  console.log('going 1');
 
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
@@ -30,19 +30,20 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         images: [
           `${req.protocol}://${req.get('host')}/img/tours/${tour.imageCover}`
         ],
-        amount: tour.price * 100,
+        amount: tour.fee * 100,
         currency: 'usd',
         quantity: 1
       }
     ]
   });
+  console.log('going 2');
+  console.log(session);
 
   // 3) Create session as response
   res.status(200).json({
     status: 'success',
     session
   });
-  next();
 });
 
 const createBookingCheckout = async session => {

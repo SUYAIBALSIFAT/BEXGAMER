@@ -11,7 +11,7 @@ export const bookTour = async tournamentId => {
 
     // 1) Get checkout session from API
     const session = await axios(
-      `/api/v1/booking/checkout-session/${tournamentId}`
+      `/api/v1/booking/checkout-session/${`${tournamentId}`}`
     );
 
     // 2) Create checkout form + chanre credit card
