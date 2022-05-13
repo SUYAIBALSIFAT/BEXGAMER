@@ -9,7 +9,8 @@ const factory = require('./handlerFactory');
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently booked tour
-  const tour = await Tournament.findById(req.params.tourId);
+  // console.log()
+  const tour = await Tournament.findById(req.params.tournamentId);
   // console.log(tour);
 
   // 2) Create checkout session
@@ -21,7 +22,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     success_url: `${req.protocol}://${req.get('host')}/my-tours?alert=booking`,
     cancel_url: `${req.protocol}://${req.get('host')}/tour/${tour.slug}`,
     customer_email: req.user.email,
-    client_reference_id: req.params.tourId,
+    client_reference_id: req.params.tournamentId,
     line_items: [
       {
         name: `${tour.name} Tour`,
@@ -41,6 +42,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     status: 'success',
     session
   });
+  next();
 });
 
 const createBookingCheckout = async session => {
