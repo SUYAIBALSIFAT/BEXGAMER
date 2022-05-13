@@ -1,4 +1,6 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(
+  'sk_test_51KyGlcABRDK75FiwvwCovpy4U52JCDLsRI4YhMfR4m6XH9gEByzgKNvx9CfjoCICWGuo5OwAZs5vVyNl24DSN4RE00Pltlkk4CY'
+);
 const Tournament = require('../models/tournamentModel');
 const User = require('../models/userModel');
 const Booking = require('../models/bookingModel');
