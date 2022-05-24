@@ -72,13 +72,15 @@
   padding: 1.2rem 2.4rem;
   border-radius: 19px;
   color: rgb(255, 255, 255);
-  border: .2rem solid #fff;
+  border: 1px solid #fff;
   background-color: #a8a8a800;
+  transition: all 0.3s;
 }
 
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
-  background-color: #e100ffc3;
+  transform: scale(1.05);
+  background-color: #8000ffc3;
 }
 
 /* MOBILE */
@@ -126,20 +128,14 @@
 .section-hero {
   background-color: #000000;
   padding: 2.8rem 0 9.6rem 0;
-  box-shadow: 0 1.2rem 4.4rem rgba(131, 54, 255, 0.616);
+  /* box-shadow: 0 1.2rem 4.4rem rgba(131, 54, 255, 0.616); */
   backface-visibility: hidden;
+  background-image:linear-gradient(90deg, rgb(0, 0, 0) 15%, #aa62279a 50%,rgba(77, 115, 192, 0.696) 90%),
+    url("../imgs/Mobile-COD-2459212706.jpeg");
+  background-size: cover;
+  border-radius: .4rem;
 }
 .hero-img-box{
-  border-radius: 4rem;
-  border-right: 1px solid #390099ff;
-  background-image: linear-gradient(
-      90deg,
-      rgb(0, 0, 0) 0%,
-      rgba(70, 47, 95, 0.14)
-    ),
-    url("../imgs/header.jpg");
-  background-size: cover;
-  background-position: center;
 }
 .hero {
   max-width: 130rem;
@@ -154,6 +150,7 @@
   font-size: 2rem;
   font-weight: 200;
   color: #646880;
+  color: #fff;
   font-family: Avenir;
   line-height: 1.6;
   margin-bottom: 5.8rem;
@@ -215,7 +212,7 @@
 
 .step-img-box {
   border-radius: 6rem;
-  box-shadow: 0 1.2rem 4.4rem rgba(131, 54, 255, 0.616);
+  /* box-shadow: 0 1.2rem 4.4rem rgba(131, 54, 255, 0.616); */
   position: relative;
   display: flex;
   align-items: center;
@@ -290,7 +287,7 @@
 }
 
 .meal-content {
-  padding: 1.2rem 1.8rem 1.8rem 1.8rem;
+  padding: 1rem;
 }
 
 .meal-tags {
@@ -392,7 +389,7 @@ border-radius: 4rem;
   align-items: center;
 }
 .gamess{
-  padding: 0 14rem;
+  padding: 0 2rem;
 
 }
 .testimonials-container {
@@ -449,7 +446,7 @@ border-radius: 4rem;
 .more{
   font-family: Roboto;
   font-weight: 100;
-  font-size: 3rem;
+  font-size: 2rem;
   align-self: center;
 }
 .gallery-item figcaption {
@@ -673,8 +670,7 @@ border-radius: 4rem;
 /**************************/
 
 .footer {
-  border-radius: 5rem;
-  padding: 8.8rem 0rem;
+  padding-top: 8.8rem;
   /* border: 1px solid rgb(255, 255, 255); */
   background-color: #140e1a97;
 }
@@ -717,7 +713,6 @@ border-radius: 4rem;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 4rem;
-  letter-spacing: .5rem;
 }
 
 .contacts {
@@ -735,6 +730,7 @@ border-radius: 4rem;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  line-height: 2rem;
 }
 
 .footer-link:link,
@@ -742,7 +738,7 @@ border-radius: 4rem;
   font-family: Roboto;
   font-weight: 900;
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: #ffffffc3;
   transition: all 0.3s;
 }
@@ -808,9 +804,9 @@ font-size: 1.2rem;
 /* ///////////////////////////////////// */
 /* ///////////////////////////////////// */
 /* ///////////////////////////////////// */
-
-
-
+img{
+  font-size: 1rem;
+}
 /* ///////////////////////////////////// */
 /* ///////////////////////////////////// */
 /* ///////////////////////////////////// */

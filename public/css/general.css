@@ -149,15 +149,16 @@ body {
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
-  font-weight: 900;
   color: rgb(255, 255, 255);
   /* color: #45260a; */
   /* color: #343a40; */
-  letter-spacing: -0.5px;
+  /* letter-spacing: -0.5px; */
 }
 
 .heading-primary {
+  font-family: 'Lato', sans-serif;
   font-size: 4.9rem;
+  font-weight: 900;
   line-height: 1.5;
   margin-bottom: 5.2rem;
 }
@@ -263,7 +264,7 @@ padding: 2rem 2rem;
   font-family: Roboto;
   font-weight: 900;
   padding: 1.8rem 1rem;
-  width: 40%;
+  width: 100%;
   text-align: center;
   color: rgba(255, 255, 255, 0.91);
   background: linear-gradient(90.37deg, #01FC9E 1.47%, #0F41FA 17.52%, #6C16EB 38.74%, #B201CD 56.86%, #F72A83 77.05%, #ECBD59 100.35%);

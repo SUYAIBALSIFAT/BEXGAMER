@@ -1,28 +1,37 @@
 .login{
+padding: 0 3rem;
 font-family: Poppins;
+display: grid;
+line-height: 3rem;
+align-items: center;
+backface-visibility: hidden;
+justify-content: center;
+row-gap: 4rem;
+grid-template-columns: 3rem 1fr 3rem;
+padding: 11rem 0;
+}
+.c2{
+grid-column: 2;
+justify-self: center;
 display: flex;
 flex-direction: column;
-align-items: center;
-gap: 4rem;
-padding-bottom: 30rem;
+gap: 3rem;
 }
 .form,.form-signup{
-display: flex;
-flex-direction: column;
+display: grid;
 align-items: center;
 gap: 4rem;
-width: 38rem;
 }
 .heading-login{
+justify-self: center;
+
   font-size: 4rem;
-  margin: 4rem 0;
 }
 .heading-h3{
   font-size: 1.8rem;
-  font-size: medium;
-  /* margin-left: 15rem; */
 }
 .heading-h2{
+  justify-self: center;
   font-size: 1.8rem;
 }
 .span-p{
@@ -38,10 +47,8 @@ color: rgb(195, 0, 255);
 .inputs{
   display: flex;
   flex-direction: column;
-  gap: 9rem;
 }
 .input-f,.input-f select{
-  align-self: center ;
   /* width: 30%; */
   font-size: 2rem;
   background-color: transparent;
@@ -50,23 +57,11 @@ color: rgb(195, 0, 255);
   border-bottom: 1px solid rgb(255, 255, 255);
 }
 .input-f {
-  display: block;
-  font-family: inherit;
   font-size: 1.5rem;
-  color: inherit;
   padding: 1.25rem 1.75rem;
   border: none;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0);
-  background-color: #f2f2f200;
-  border-top: 3px solid transparent;
   border-bottom: 1px solid rgb(255, 255, 255);
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  /* Pseudo element (a visible thing that isn't really in the DOM).
-      Also needs -ms- */
 }
 .input-f:focus {
   outline: none;
@@ -82,13 +77,8 @@ color: rgb(195, 0, 255);
 .btn:link,
 .btn:visited {
   border-radius: 1.5rem;
-  display: inline-block;
   text-decoration: none;
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  /*Add later when we use this for the button in form*/
   border: none;
   cursor: pointer;
 }
@@ -108,7 +98,7 @@ color: rgb(195, 0, 255);
 }
 
 .btn:focus {
-  outline: none;
+  outline: 1px solid #fff;
   background-color: #474747;
 }
 

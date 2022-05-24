@@ -67,7 +67,11 @@
     /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
   }
-
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr 1fr;
+  }
   .hero {
     justify-content: center;
     grid-template-columns: 1fr;
@@ -99,9 +103,9 @@
     font-size: 7.4rem;
   }
 
-  .meal-content {
+  /* .meal-content {
     padding: 2.4rem 3.2rem 3.2rem 3.2rem;
-  }
+  } */
 
   .section-testimonials {
     grid-template-columns: 1fr;
@@ -195,7 +199,11 @@
   .grid--4-cols {
     grid-template-columns: repeat(2, 1fr);
   }
-
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
   .diets {
     grid-column: 1 / -1;
     justify-self: center;
@@ -233,7 +241,17 @@
   .grid {
     row-gap: 4.8rem;
   }
-
+  .heading-login{
+    justify-self: center;
+      font-size: 2rem;
+    }
+    .heading-h2{
+      font-size: 1.8rem;
+    }
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 45%;
+  }
   .grid--2-cols,
   .grid--3-cols,
   .grid--4-cols {

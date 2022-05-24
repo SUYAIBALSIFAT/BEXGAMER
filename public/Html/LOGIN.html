@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/general.css" />
-  <link rel="stylesheet" href="css/login.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/queries.css" />
+  <link rel="stylesheet" href="../css/general.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/queries.css" />
 
   <!-- <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
@@ -55,18 +55,18 @@
       <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
     </button>
   </header>
-  <section class="login">
-    <div>
-      <h1 class="heading-login center-text">LOGIN TO YOUR ACCOUNT</h1>
-      <H3 class="heading-h2 center-text">Don't have an account? <a href="#" class="link span-p">Sign Up</a> </H3>
+  <section class="container login">
+    <div class="c2">
+      <h1 class="heading-login">LOGIN TO YOUR ACCOUNT</h1>
+      <H3 class="heading-h2">Don't have an account? <a href="#" class="links span-p">Sign Up</a> </H3>
+      <form class="form" action="#">
+        <input class="input-f" id="email" type="email" placeholder="EMAIL" name="email" required />
+        <input class="input-f" id="PASSWORD" type="PASSWORD" placeholder="PASSWORD" name="PASSWORD" minlength='8'
+          required />
+        <H3 class="heading-h3"><a href="#" class="span-b">Forgot Password or Email?</a> </H3>
+        <button class="btn btn--green">Login</button>
+      </form>
     </div>
-    <form class="form" action="#">
-      <input class="input-f" id="email" type="email" placeholder="EMAIL" name="email" required />
-      <input class="input-f" id="PASSWORD" type="PASSWORD" placeholder="PASSWORD" name="PASSWORD" minlength='8'
-        required />
-      <H3 class="heading-h3 center-text"><a href="#" class="span-b">Forgot Password or Email?</a> </H3>
-      <button class="btn btn--green">Login</button>
-    </form>
   </section>
   <!-- <section class="section-cta" id="cta">
     <div class="container">
