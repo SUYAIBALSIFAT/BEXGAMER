@@ -11,6 +11,8 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const cors = require('cors');
 
+const dotenv = require('dotenv');
+
 const AppError = require('./utilits/appError');
 const globalErrorHandler = require('./contoroller/errorController');
 const tourRouter = require('./routes/tourRouters');
@@ -21,6 +23,8 @@ const viewRouter = require('./routes/viewRouters');
 
 // Start express app
 const app = express();
+
+dotenv.config({ path: './config.env' });
 
 app.enable('trust proxy');
 
@@ -43,8 +47,14 @@ app.options('*', cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
-// app.use(helmet());
-
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: false
+//     // crossOriginEmbedderPolicy: false,
+//     // crossOriginOpenerPolicy: false,
+//     // crossOriginResourcePolicy: false
+//   })
+// );
 // Development logging
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -101,7 +111,7 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 app.use('/', viewRouter);
-app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/tournaments', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/booking', bookingRouter);
 

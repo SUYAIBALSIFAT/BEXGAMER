@@ -4,7 +4,7 @@ const bookingSchema = new mongoose.Schema({
   tournament: {
     type: mongoose.Schema.ObjectId,
     ref: 'Tournament',
-    required: [true, 'Booking must belong to a Tour!']
+    required: [true, 'Booking must belong to a Tournament!']
   },
   user: {
     type: mongoose.Schema.ObjectId,

@@ -1,43 +1,211 @@
 extends base
 
 block content
- main.main
-  .card-container
-   each Tournament in Tournaments
-    .card
-      .card__header
-        .card__picture
-          .card__picture-overlay &nbsp;
-          img.card__picture-img(src='/img/tours/tour-1-cover.jpg', alt=`${Tournament.name}`)
-        h3.heading-tertirary
-          span= Tournament.name
+  main
+  section.section-hero
+    .hero
+      .hero-text-box
+        h1.heading-primary
+          | A ESPORT PATFROM FOR MOBLIE GAMERS
+        p.hero-description
+          | tournaments for mobile gamers. join the be x gamer community today and become x gamer. we work As
+          | individual
+          | providing a open platform for gamers To come together And participate in tournaments.
+        a.btn.btn--full.margin-right-sm(href='/login') Start gaming now
+        .hash-tag
+          p.text
+            | # BE A 
+            span.x  X 
+            |  GAMER
+      .hero-img-box
+  section#tournaments.section-tournaments
+  .center-text
+    span.subheading.Tournaments
+      | Tournaments
+    h2.heading-secondary
+      | Choose 
+      span.span-1 Your
+      |  Game To 
+      span.span-2 Partepate
+  .container.grid.grid--3-cols.margin-bottom-md
+   each Tournament in Tournaments 
+    a.meal.link(href=`/tournament/${Tournament.slug}`) 
+      img.meal-img(src=`../img/tours/${Tournament.imgCover}` alt='tournament-img')
+      .meal-content
+        .meal-tags
+          span.tag.tag--vegetarian NEW
+          p.XX
+            | Registration Ends : 
+            span.span-9  12:98:23
+        p.meal-title= `${Tournament.name}`
+        ul.meal-attributes
+          li.meal-attribute
+            ion-icon.meal-icon(name='trophy-outline')
+            p
+              span.span-4 Prize Pool
+              |  :
+              span.span-4= ` $ ${Tournament.fee}`
+            ion-icon.meal-icon.icon(name='trending-up-outline')
+          li.meal-attribute
+            ion-icon.meal-icon(name='calendar-number-outline')
+            p
+              span Registration Ends : 
+              strong= Tournament.registrationEnds.toLocaleString('en-us',{ year: 'numeric', month: 'numeric', day: 'numeric', minute: 'numeric',hour:'numeric'})
+          li.meal-attribute
+            ion-icon.meal-icon(name='podium-outline')
+            span= `Tournament Starts : ${Tournament.tournamentStarts.toLocaleString('en-us',{ year: 'numeric', month: 'numeric', day: 'numeric', minute: 'numeric',hour:'numeric'})}`
+  .container.all-recipes
+    a.links.span-4(href='/login')
+      strong See All Tournament
+  span.subheading.Tournaments.center-text.span-11 How it works
+  section#how.section-how
+    .container
+      h2.heading-secondary.center-text.mb
+        span.span-3 Reigster
+        |  For The 
+        span.span-4 Tournamets
+    .container.grid.grid--2-cols
+      // STEP 01
+      .step-text-box
+        p.step-number 01
+        h3.heading-tertiary
+          | Join the X Gamer communaity
+        p.step-description
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est nemo sapiente assumenda officia ab possimus
+          | provident vel vero odit neque pariatur impedit tenetur ipsam sit, ducimus dicta fugit. Ipsam, modi.
+      .step-img-box
+        img.step-img(src='/imgs/Screen Shot 2022-05-20 at 4.12.15 PM.png' alt='iPhone app\
+        preferences selection screen')
+      // STEP 02
+      .step-img-box
+        img.step-img(src='/imgs/Screen Shot 2022-05-20 at 4.12.22 PM.png' alt='iPhone app\
+        meal approving plan screen')
+      .step-text-box
+        p.step-number 02
+        h3.heading-tertiary Choose A game To Play
+        p.step-description
+          | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate sunt provident ratione. Voluptatibus
+          | totam in illum officia! Aut at animi consectetur, cupiditate voluptatibus nostrum quia dolorem velit quaerat
+          | pariatur molestias.
+      // STEP 03
+      .step-text-box
+        p.step-number 03
+        h3.heading-tertiary Get The Room ID And Win $Prize
+        p.step-description
+          | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis omnis repellendus eum dignissimos
+          | reprehenderit aut odio delectus, quia enim expedita nisi earum assumenda modi doloremque quae ipsam fugit,
+          | repudiandae minima.
+      .step-img-box
+        img.step-img(src='/imgs/Screen Shot 2022-05-20 at 4.12.28 PM.png' alt='iPhone app\
+        delivery screen')
+      //- p.text.Tournaments.subheading
+      //-   | # BE A 
+      //-   span.x  X 
+      //-   |  GAMER
+    h2.heading-secondary.span-5.strong.Tournaments.center-text All Mobile Games
+  section.gamess.center-text
+      .gallery
+        figure.gallery-item
+          img.borders(src='imgs/COD-GAME.jpg' alt='Photo of beautifully\
+          arranged ')
+          figcaption CALL OF DUTY MOBILE
+        figure.gallery-item
+          img.borders(src='imgs/game1.jpg' alt='Photo of beautifully\
+          arranged ')
+          figcaption FREE FIRE MOBILE
+        figure.gallery-item
+          img.borders(src='imgs/game2.jpeg' alt='Photo of beautifully\
+          arranged ')
+          figcaption PUBG MOBILE
+        p.more More Coming Soon
+      .container.grid.grid--4-cols
+        .feature
+          ion-icon.feature-icon(name='infinite-outline')
+          p.feature-title Never cook again!
+          p.feature-text
+            | Our subscriptions cover 365 days per year, even including major
+            | holidays.
+        .feature
+          ion-icon.feature-icon(name='nutrition-outline')
+          p.feature-title Local and organic
+          p.feature-text
+            | Our cooks only use local, fresh, and organic products to prepare
+            | your meals.
+        .feature
+          ion-icon.feature-icon(name='leaf-outline')
+          p.feature-title No waste
+          p.feature-text
+            | All our partners only use reusable containers to package all your
+            | meals.
+        .feature
+          ion-icon.feature-icon(name='pause-outline')
+          p.feature-title Pause anytime
+          p.feature-text
+            | Going on vacation? Just pause your subscription, and we refund
+            | unused days.
+  section#cta.section-cta
+    .container
+      .cta.borders
+        .cta-text-box.box-s
+          h2.heading-secondary Start Play Tournament And Win
+          p.cta-text
+            | Playing game is not a waste of time anyone.You can Earn and make friends in our X gamer community. SIGNUP
+            | NOW!
+          form.cta-form(name='sign-up' action='submit')
+            div
+              label(for='full-name') Full Name
+              input#full-name(type='text' placeholder='John Smith' name='full-name' required='')
+            div
+              label(for='email') Email address
+              input#email(type='email' placeholder='me@example.com' name='email' required='')
+            //- div
+            //-   label(for='select-where') Where did you hear from us?
+            //-   select#select-where(name='select-where' required='')
+            //-     option(value='') Please choose one option:
+            //-     option(value='friends') Friends and family
+            //-     option(value='youtube') YouTube video
+            //-     option(value='podcast') Podcast
+            //-     option(value='ad') Facebook ad
+            //-     option(value='others') Others
+            a.btnt.btn--tournament(href='#') Start gaming now
+        .cta-img-box(role='img' aria-label='Woman enjoying food')
+//-  main.main
+//-   .card-container
+//-    each Tournament in Tournaments
+//-     .card
+//-       .card__header
+//-         .card__picture
+//-           .card__picture-overlay &nbsp;
+//-           img.card__picture-img(src='/img/tours/tour-1-cover.jpg', alt=`${Tournament.name}`)
+//-         h3.heading-tertirary
+//-           span= Tournament.name
 
-      .card__details
-        h4.card__sub-heading= `PIZEPOOL ${Tournament.fee}$`
-        p.card__text BE A X GAMEFR TODAY BY ENTERING
-        .card__data
-          svg.card__icon
-            use(xlink:href='/img/icons.svg#icon-map-pin')
-          span=`${Tournament.platform}`
-        .card__data
-          svg.card__icon
-            use(xlink:href='/img/icons.svg#icon-calendar')
-          span= Tournament.winnerAouncment.toLocaleString('en-us',{month: 'long',year: 'numeric'})
-        .card__data
-          svg.card__icon
-            use(xlink:href='/img/icons.svg#icon-flag')
-          |       
-          span=Tournament.teamSize
-        .card__data
-          svg.card__icon
-            use(xlink:href='/img/icons.svg#icon-user')
-          span=`${Tournament.playersInMatch} people`
+//-       .card__details
+//-         h4.card__sub-heading= `PIZEPOOL ${Tournament.fee}$`
+//-         p.card__text BE A X GAMEFR TODAY BY ENTERING
+//-         .card__data
+//-           svg.card__icon
+//-             use(xlink:href='/img/icons.svg#icon-map-pin')
+//-           span=`${Tournament.platform}`
+//-         .card__data
+//-           svg.card__icon
+//-             use(xlink:href='/img/icons.svg#icon-calendar')
+//-           span= Tournament.winnerAouncment.toLocaleString('en-us',{month: 'long',year: 'numeric'})
+//-         .card__data
+//-           svg.card__icon
+//-             use(xlink:href='/img/icons.svg#icon-flag')
+//-           |       
+//-           span=Tournament.teamSize
+//-         .card__data
+//-           svg.card__icon
+//-             use(xlink:href='/img/icons.svg#icon-user')
+//-           span=`${Tournament.playersInMatch} people`
 
-      .card__footer
-        p
-          span.card__footer-value= `$${Tournament.pizePool}`
-          | 
-          span.card__footer-text per person
-        p.card__ratings
-        P # BE X GAMER
-        a.btn.btn--green.btn--small(href=`/tournament/${Tournament.slug}`) Details
+//-       .card__footer
+//-         p
+//-           span.card__footer-value= `$${Tournament.pizePool}`
+//-           | 
+//-           span.card__footer-text per person
+//-         p.card__ratings
+//-         P # BE X GAMER
+//-         a.btn.btn--green.btn--small(href=`/tournament/${Tournament.slug}`) Details

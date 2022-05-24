@@ -13,23 +13,28 @@ const TournamentSchema = new mongoose.Schema({
     default: 10
   },
   slug: String,
-  winnerAouncment: {
-    type: Date,
-    require: [true, 'A tournament must have a WINNER_AOUNCMENT_DATE']
-  },
   closeOn: {
     type: Date,
     require: [true, 'A tournament must have a CLOSE_ON']
   },
-  pizePool: {
+  registrationEnds: {
+    type: Date
+    // require: [true, 'A tournament must have a registrationEnds']
+  },
+  tournamentStarts: {
+    type: Date
+    // require: [true, 'A tournament must have a tournamentStarts']
+  },
+  pize: {
     type: Number,
-    default: 40,
+    default: 0,
     require: [true, 'A tournament must have a PIZE_POOL'],
     maxlength: 2
   },
-  teamSize: {
+  gameType: {
     type: String,
-    require: [true, 'A tournament must have a TEAM SIZE']
+    default: 'solo',
+    require: [true, 'A tournament must have a gameType']
   },
   playersInMatch: {
     type: Number,
@@ -42,7 +47,7 @@ const TournamentSchema = new mongoose.Schema({
   },
   platform: { type: String, default: 'MOBILE' },
   region: { type: String, default: 'ANY REGION' },
-  imgcover: {
+  imgCover: {
     type: String,
     require: [true, 'A tournament must have a imgcover']
   },

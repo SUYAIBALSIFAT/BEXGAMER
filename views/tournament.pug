@@ -1,42 +1,86 @@
 extends base
 block content
-  section.section-header
-    .header__hero
-      .header__hero-overlay &nbsp;
-      img.header__hero-img(src=`/img/tours/${tournament.imgcover}`, alt=`${tournament.name}`)
-
-    .heading-box
-      h1.heading-primary
-        span= `${tournament.name} tour`
-      .heading-box__group
-        .heading-box__detail
-          svg.heading-box__icon
-            use(xlink:href='/img/icons.svg#icon-clock')
-          span.heading-box__text= `${tournament.slug} days`
-        .heading-box__detail
-          
-
-  
-
-    
-  section.section-pictures
-    each img, i in tournament.img
-      .picture-box
-        img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
-
-  
-
-  section.section-cta
-    .cta
-      .cta__img.cta__img--logo
-        img(src='/css/logo-white.png', alt='Natours logo')
-      img.cta__img.cta__img--1(src=`/img/tours/${tournament.img[1]}`, alt='Tour picture')
-      img.cta__img.cta__img--2(src=`/img/tours/${tournament.img[2]}`, alt='Tour picture')
-      .cta__content
-        h2.heading-secondary What are you waiting for?
-        p.cta__text= `${tournament.slug} days. 1 adventure. Infinite memories. Make it yours today!`
-        
-        if user
-          button.btn.btn--green.span-all-rows#book-tour(data-tour-id=`${tournament._id}`) Book tour now!
-        else
-          a.btn.btn--green.span-all-rows(href='/login') Log in to book tour
+  span.subheading.Tournaments.center-text
+    | Tournament
+  section.Tournament
+    .tournament_h
+      h3.profile-h= `${tournament.name}`
+      img.tournament_imgs.ts(src=`/img/tours/${tournament.imgCover}` alt='')
+      .tournament-divs
+        ion-icon.tour-icons(name='trophy-outline')
+        p.profile-h= `Prize Pool : $ ${tournament.pize}`
+        ion-icon.tour-icons(name='star')
+        p.profile-hm
+          | The room id will shown right 15 min Before the game starts.
+      .tournament-divs
+        ion-icon.tour-icon(name='key')
+        p.profile-h
+          | THE ROOM ID : 
+          span.span-9 11 : 22 : 20
+        ion-icon.tour-icons(name='star')
+        p.profile-hm
+          | The room id will shown right 15 min Before the game
+          | starts.
+      .tournament-divs
+        ion-icon.tour-icons(name='time-outline')
+        p.profile-h Sopts left : 22/25
+    .tournament_d
+      h3.profile-h.live
+        | LIVE NOW
+      h4.profile-h.lives REGISTATION PHASE
+      h3.profile-h.d
+        | Details
+        //
+          <Details>
+          <li class="tournament_li">TEAM SIZE : SOLO</li>
+          </Details>
+      ul.tournament_ul
+        li.tournament_li
+          | TEAM SIZE : 
+          span.tournament-span  SOLO 
+        li.tournament_li
+          | PLAYERS IN MATCH : 
+          span.tournament-span 100 
+        li.tournament_li
+          | PLATFORM : 
+          span.tournament-span  MOBILE
+        li.tournament_li
+          | TOURNAMENT TYPE : 
+          span.tournament-span  ELIMATION 
+        li.tournament_li
+          | REGION : 
+          span.tournament-span  ANY REGION 
+        li.tournament_li
+          | PRIZE : 
+          span.tournament-span  $100 
+        a.btn--tournament(href='#') enter now
+    .tournament_info
+      h3.profile-h.lives
+        | REGISTATION PHASE
+      //
+        <h3 class="profile-h lives">
+        TOURNAMENT INFO
+        </h3>
+      li.tournament_li-p EXPALNES HOW TO PLAY
+      p.tournament_p
+        | setap 1 : 
+        span
+          | Enter for the tournament.A room id well be sent before 30 min
+          | of game start
+          | BY EMAIL
+      p.tournament_p
+        | setap 1 : 
+        span
+          | Enter for the tournament.A room id well be sent before 30 min
+          | of game start
+      p.tournament_p
+        | setap 1 : 
+        span
+          | Enter for the tournament.A room id well be sent before 30
+          | min of game start
+    .profile-h.tournament_info2
+      h4.tournament_info2-h TOURNAMENT PHASE
+      p ROUND - 1
+      div ....
+      p WINNER
+    a.btnt.btn--tournament#book-tour(data-tour-id=`${tournament._id}`)(href='#') Start gaming now

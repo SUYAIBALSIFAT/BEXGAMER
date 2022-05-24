@@ -1,0 +1,182 @@
+.login{
+font-family: Poppins;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 4rem;
+padding-bottom: 30rem;
+}
+.form,.form-signup{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 4rem;
+width: 38rem;
+}
+.heading-login{
+  font-size: 4rem;
+  margin: 4rem 0;
+}
+.heading-h3{
+  font-size: 1.8rem;
+  font-size: medium;
+  /* margin-left: 15rem; */
+}
+.heading-h2{
+  font-size: 1.8rem;
+}
+.span-p{
+color: rgb(195, 0, 255);
+}
+.span-b{
+  color: rgba(112, 100, 249, 0.816);
+  text-decoration: none;
+}
+.span-b:hover{
+  color: #55c57a;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 9rem;
+}
+.input-f,.input-f select{
+  align-self: center ;
+  /* width: 30%; */
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  color: azure;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.input-f {
+  display: block;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 1.75rem;
+  border: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  background-color: #f2f2f200;
+  border-top: 3px solid transparent;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Pseudo element (a visible thing that isn't really in the DOM).
+      Also needs -ms- */
+}
+.input-f:focus {
+  outline: none;
+  border-bottom: 3px solid #55c57a;
+}
+.input-f:focus:invalid {
+  border-bottom: 3px solid #ff3030;
+}
+.input-f::-webkit-input-placeholder {
+  color: rgb(130, 130, 130);
+}
+.btn,
+.btn:link,
+.btn:visited {
+  border-radius: 1.5rem;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /*Add later when we use this for the button in form*/
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+  background-color: #474747;
+}
+
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+.btn--white::after {
+  background-color: #fff;
+}
+
+.btn--green {
+  /* width: 50%; */
+  font-weight: normal;
+  padding: 1.4rem 4rem;
+  background-color: #474747;
+  color: #fff;
+}
+.btn--green::after {
+  background-color: #55c57a;
+}
+/* //////////////////////////////// */
+
+.nav-user{
+position: absolute;
+top: 101%;
+right: -100%;
+/* transform: translate(-50%, -50%); */
+width: 25rem;
+height: 39rem;
+text-align: center;
+background-color: rgb(255, 255, 255);
+display: grid;
+align-items: center;
+border-radius: 1rem;
+visibility: hidden;
+}
+.nav-user div {
+  text-align: center;
+  padding: 2rem;
+  /* border-radius: .5rem; */
+  border-left: 3px solid #2744824a;
+}
+.nav-user div:hover{
+  background-color: #55c57a;
+  /* background-color: #4115b0; */
+}
+.profile-li-user{
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: roboto;
+  color: #0d0c22;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+.profie-navs{
+  position: relative;
+}
+.profile-li-user:hover,.profile-li-user:active{
+  font-family: roboto;
+  color: #fca311;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+.profie-navs:hover section{
+  visibility: visible;
+  position: absolute;
+  /* top: -250%;
+  left: -19%; */
+}

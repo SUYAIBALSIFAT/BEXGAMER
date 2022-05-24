@@ -1,0 +1,81 @@
+extends base
+block content
+  section#tournaments.section-tournaments
+  .center-text
+    span.subheading.Tournaments
+      | Tournaments
+    //- h2.heading-secondary
+    //-   | Choose 
+    //-   span.span-1 Your
+    //-   |  Game To 
+    //-   span.span-2 Partepate
+  .container.grid.grid--3-cols.margin-bottom-md
+   each Tournament in Tournaments 
+    a.meal.link(href=`Tournament/${Tournament.slug}`) 
+      img.meal-img(src=`../img/tours/${Tournament.imgCover}` alt='tournament-img')
+      .meal-content
+        .meal-tags
+          span.tag.tag--vegetarian NEW
+          p.XX
+            | Registration Ends : 
+            span.span-6  12:98:23
+        p.meal-title= `${Tournament.name}`
+        ul.meal-attributes
+          li.meal-attribute
+            ion-icon.meal-icon(name='trophy-outline')
+            p
+              span.span-4 Prize Pool
+              |  :
+              span.span-4= ` $ ${Tournament.fee}`
+            ion-icon.meal-icon.icon(name='trending-up-outline')
+          li.meal-attribute
+            ion-icon.meal-icon(name='calendar-number-outline')
+            p
+              span Registration Ends : 
+              strong= Tournament.registrationEnds.toLocaleString('en-us',{ year: 'numeric', month: 'numeric', day: 'numeric', minute: 'numeric',hour:'numeric'})
+          li.meal-attribute
+            ion-icon.meal-icon(name='podium-outline')
+            span= `Tournament Starts : ${Tournament.tournamentStarts.toLocaleString('en-us',{ year: 'numeric', month: 'numeric', day: 'numeric', minute: 'numeric',hour:'numeric'})}`
+  .container.all-recipes
+    a.btn.btn--full.mb(href='#')
+      strong LOAD MORE
+  //- section.section-header
+  //-   .header__hero
+  //-     .header__hero-overlay &nbsp;
+  //-     img.header__hero-img(src=`/img/tours/${tournament.imgcover}`, alt=`${tournament.name}`)
+
+  //-   .heading-box
+  //-     h1.heading-primary
+  //-       span= `${tournament.name} tour`
+  //-     .heading-box__group
+  //-       .heading-box__detail
+  //-         svg.heading-box__icon
+  //-           use(xlink:href='/img/icons.svg#icon-clock')
+  //-         span.heading-box__text= `${tournament.slug} days`
+  //-       .heading-box__detail
+          
+
+  
+
+    
+  //- section.section-pictures
+  //-   each img, i in tournament.img
+  //-     .picture-box
+  //-       img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
+
+  
+
+  //- section.section-cta
+  //-   .cta
+  //-     .cta__img.cta__img--logo
+  //-       img(src='/css/logo-white.png', alt='Natours logo')
+  //-     img.cta__img.cta__img--1(src=`/img/tours/${tournament.img[1]}`, alt='Tour picture')
+  //-     img.cta__img.cta__img--2(src=`/img/tours/${tournament.img[2]}`, alt='Tour picture')
+  //-     .cta__content
+  //-       h2.heading-secondary What are you waiting for?
+  //-       p.cta__text= `${tournament.slug} days. 1 adventure. Infinite memories. Make it yours today!`
+        
+  //-       if user
+  //-         button.btn.btn--green.span-all-rows#book-tour(data-tour-id=`${tournament._id}`) Book tour now!
+  //-       else
+  //-         a.btn.btn--green.span-all-rows(href='/login') Log in to book tour

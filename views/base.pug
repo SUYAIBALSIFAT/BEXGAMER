@@ -3,11 +3,30 @@ html
   head
     block head
       meta(charset='UTF-8')
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='description' content='Tournaments for mobile gamers. join the be x gamer community today and become a x gamer. we work As indibcal probeting a open platfrom for gamer come toughter to paticiped in tournament.')
+      // Always include this line of code!!!
       meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      link(rel='icon' href='/imgs/x.jpg')
+      link(rel='apple-touch-icon' href='/imgs/X.jpg')
+      //- link(rel='manifest' href='manifest.webmanifest')
+      link(rel='preconnect' href='https://fonts.gstatic.com')
+      link(href='https://fonts.googleapis.com/css?family=Monoton&display=swap' rel='stylesheet')
+      link(href='https://fonts.googleapis.com/css?family=Roboto&display=swap' rel='stylesheet')
+      link(href='https://fonts.googleapis.com/css?family=Poppins&display=swap' rel='stylesheet')
+      link(rel='stylesheet' href='/css/general.css')
+      link(rel='stylesheet' href='/css/profile.css')
+      link(rel='stylesheet' href='/css/tournament.css')
       link(rel='stylesheet' href='/css/style.css')
-      link(rel='shortcut icon' type='image/png' href='/css/favicon.png')
-      link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
-      title Natours | #{title}
+      link(rel='stylesheet' href='/css/queries.css')
+      link(rel='stylesheet' href='/css/login.css')
+      script(type='module' src='https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js')
+      script(nomodule='' src='https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js')
+      script(defer='' src='https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js')
+      //- script(defer='' src='Html/script.js')
+      //- script(defer='' src='js/login.js')
+      title X GAMER - #{tittle}
+
 
   body(data-alert=`${alert ? alert : ''}`)
     // HEADER
@@ -23,5 +42,7 @@ html
     //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
     //- script(src='/js/mapbox.js')
     //- script(src='/js/login.js')
+    script(src="https://js.stripe.com/v3/")
+    //- script(src="../js/script.js")
     script(src='/js/bundle.js')
 

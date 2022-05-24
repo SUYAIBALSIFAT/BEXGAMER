@@ -1,14 +1,57 @@
 header.header
-    nav.nav.nav--tours
-        a.nav__el(href='/') All tours
-    .header__logo
-        img(src='/css/logo-white.png', alt='Natours logo')
-    nav.nav.nav--user
-     if user
-        a.nav__el.nav__el--logout(href='/logout') log out
-        a.nav__el(href='/me')
-          img.nav__user-img(src=`/img/users/${user.photo}`, alt='User photo')
-          span= user.name
-     else
-        a.nav__el(href='/login') Log in
-        a.nav__el.nav__el--cta(href='#') Sign up
+  div
+   a.main-nav-link(href='/')
+    img.logo(alt='X GAMER LOGO' src=`/imgs/x.png`)
+    span.game Gamer
+  nav.main-nav
+    ul.main-nav-list
+      li
+        a.main-nav-link(href='/#how') HOW IT WORKS
+      li
+        a.main-nav-link(href='/tournament') TOURNAMENTS
+      li
+        a.main-nav-link(href='#') DONATE US
+        if user
+          li.profie-navs
+            img.user(src=`/imgs/${user.photo}`, alt="user photo")
+            section.nav-user
+              div
+                a.profile-li-user(href='/me') Profile
+              div
+                a.profile-li-user(href='#') password
+              div
+                a.profile-li-user(href='#') notifictions
+              div
+                a.profile-li-user(href='#') MyTournament
+              div
+                a.profile-li-user(href='#') withwter
+              div
+                a.profile-li-user.span-4.nav__el--logout(href='/logout') Log out
+
+        else
+          li
+           a.main-nav-link.nav-cta(href='/login') LOGIN / SIGNUP
+  button.btn-mobile-nav
+    ion-icon.icon-mobile-nav(name='menu-outline')
+    ion-icon.icon-mobile-nav(name='close-outline')
+
+
+
+
+
+
+
+//- header.header
+//-     nav.nav.nav--tours
+//-         a.nav__el(href='/') All tours
+//-     .header__logo
+//-         img(src='/css/logo-white.png', alt='Natours logo')
+//-     nav.nav.nav--user
+//-      if user
+//-         a.nav__el.nav__el--logout(href='/logout') log out
+//-         a.nav__el(href='/me')
+//-           img.nav__user-img(src=`/img/users/${user.photo}`, alt='User photo')
+//-           span= user.name
+//-      else
+//-         a.nav__el(href='/login') Log in
+//-         a.nav__el.nav__el--cta(href='#') Sign up

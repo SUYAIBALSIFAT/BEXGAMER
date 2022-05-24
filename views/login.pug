@@ -1,14 +1,27 @@
 extends base
 block content
-  main.main
-    .login-form
-      h2.heading-secondary.ma-bt-lg Log into your account
-      form.form.form--login
-        .form__group
-          label.form__label(for='email') Email address
-          input#email.form__input(type='email', placeholder='you@example.com', required)
-        .form__group.ma-bt-md
-          label.form__label(for='password') Password
-          input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
-        .form__group
-          button.btn.btn--green Login
+  section.login
+    div
+      h1.heading-login.center-text LOGIN TO YOUR ACCOUNT
+      h3.heading-h2.center-text
+        | Don&apos;t have an account? 
+        a.links.span-p(href='/signup') Sign Up
+    form.form(action="submit")
+      input#email.input-f(type='email' placeholder='EMAIL' name='email' required='')
+      input#PASSWORD.input-f(type='password' placeholder='PASSWORD' name='PASSWORD' minlength='8' required='')
+      h3.heading-h3.center-text
+        a.span-b(href='#') Forgot Password or Email?
+      button.btn.btn--green Login
+
+  //- main.main
+  //-   .login-form
+  //-     h2.heading-secondary.ma-bt-lg Log into your account
+  //-     form.form.form--login
+  //-       .form__group
+  //-         label.form__label(for='email') Email address
+  //-         input#email.form__input(type='email', placeholder='you@example.com', required)
+  //-       .form__group.ma-bt-md
+  //-         label.form__label(for='password') Password
+  //-         input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+  //-       .form__group
+  //-         button.btn.btn--green Login

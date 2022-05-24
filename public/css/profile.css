@@ -1,0 +1,110 @@
+.profile{
+  display: grid;
+  /* justify-content: center; */
+  margin: 0 auto;
+  gap: 9rem;
+  grid-template-columns: repeat(3,1fr);
+  line-height: 2rem;
+padding-bottom: 22rem;
+}
+.profile-info{
+  grid-column: 1/3;
+  overflow: scroll;
+  justify-self: end;
+  display: flex;
+  gap: 6rem;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.profile-infos{
+  border-right: 1px solid rgb(149, 149, 149);
+  padding-right: 1rem;
+  grid-column: 1/2;
+  justify-self: end;
+  display: flex;
+  align-items: end;
+  gap: 3rem;
+  flex-direction: column;
+}
+.profile-img{
+  display: block;
+  width: 11rem;
+  border-radius: 50%;
+}
+.profile-p{
+  font-size: 1.8rem;
+color: rgb(132, 126, 126);
+}
+.profile-li{
+  list-style: none;
+  font-weight: 900;
+  font-family: Poppins;
+  background-color: transparent;
+  /* line-height: 2rem; */
+  font-size: 2.5rem;
+color: rgb(255, 255, 255);
+text-decoration: none;
+}
+.profile-li:focus,.profile-li:hover,.profile-li:active{
+ color: #2fff00;
+ list-style: none;
+}
+.profile-h{
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 4rem;
+}
+.span-y{
+  color: rgb(89, 255, 0);
+}
+.formp{
+font-family: Poppins;
+display: grid;
+gap: 4rem;
+}
+label{
+  color: rgb(255, 255, 255);
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  grid-template-columns: repeat(3,1fr);
+
+}
+/* .input-p,.input-p select{
+  width: 100%;
+  font-size: 2rem;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+} */
+.input-p {
+ display: block;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  padding: 1.25rem 1.75rem;
+  width: 100%;
+  background-color: #f2f2f200;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: .7rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Pseudo element (a visible thing that isn't really in the DOM).
+      Also needs -ms- */
+}
+.input-p:focus {
+  outline: none;
+  border-bottom: 3px solid #55c57a;
+}
+.input-p:focus:invalid {
+  border-bottom: 3px solid #ff3030;
+}
+.input-p::-webkit-input-placeholder {
+  color: rgb(130, 130, 130);
+}
+
+.end{
+  align-self: end;
+}

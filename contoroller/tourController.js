@@ -21,19 +21,18 @@ const upload = multer({
 });
 
 exports.uploadTournamentImgs = upload.fields([
-  { name: 'imgcover', maxCount: 1 },
+  { name: 'imgCover', maxCount: 1 },
   { name: 'img', maxCount: 3 }
 ]);
-
 exports.resizeTournamentImgs = catchAsync(async (req, res, next) => {
   //1) coverimgaes
-  if (!req.files.imgcover || !req.files.img) return next();
-  req.body.imgcover = `tournament-${req.params.id}-${Date.now()}-cover.jpeg`;
-  await sharp(req.files.imgcover[0].buffer)
+  if (!req.files.imgCover || !req.files.img) return next();
+  req.body.imgCover = `tournament-${req.params.id}-${Date.now()}-cover.jpeg`;
+  await sharp(req.files.imgCover[0].buffer)
     .resize(2000, 1333)
     .toFormat('jpeg')
     .jpeg({ quality: 90 })
-    .toFile(`public/img/tours/${req.body.imgcover}`);
+    .toFile(`public/img/tours/${req.body.imgCover}`);
 
   //2 images
   req.body.img = [];

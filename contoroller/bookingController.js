@@ -18,22 +18,22 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     // success_url: `${req.protocol}://${req.get('host')}/my-tours/?tour=${
     //   req.params.tourId
     // }&user=${req.user.id}&price=${tour.price}`,
-    success_url: `${req.protocol}://${req.get('host')}/my-tours?alert=booking`,
-    cancel_url: `${req.protocol}://${req.get('host')}/tour/${tour.slug}`,
+    success_url: `${req.protocol}://${req.get('host')}/?alert=booking`,
+    cancel_url: `${req.protocol}://${req.get('host')}/tournament/${tour.slug}`,
     customer_email: req.user.email,
     client_reference_id: req.params.tournamentId,
     line_items: [
       {
-        name: `${tour.name} Tour`,
-        description: tour.summary,
+        name: `${tour.name} Tournament`,
         images: [
-          `${req.protocol}://${req.get('host')}/img/tours/${tour.imageCover}`
+          `https://cdn.dribbble.com/assets/default_avatars/avatar-8-8e414ef7f6439f053182f89952e0c07a64ebb889f65561a37fb8804dd9cd2d33.png`
         ],
         amount: tour.fee * 100,
         currency: 'usd',
         quantity: 1
       }
-    ]
+    ],
+    mode: 'payment'
   });
   // 3) Create session as response
   res.status(200).json({
@@ -43,10 +43,11 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 });
 
 const createBookingCheckout = async session => {
-  const tour = session.client_reference_id;
-  const user = (await User.findOne({ email: session.customer_email })).id;
-  const price = session.display_items[0].amount / 100;
-  await Booking.create({ tour, user, price });
+  const tournament = session.client_reference_id;
+  const user = (await User.findOne({ email: session.customer_details.email }))
+    .id;
+  const price = session.amount_total / 100;
+  await Booking.create({ tournament, user, price });
 };
 
 exports.webhookCheckout = (req, res, next) => {
@@ -57,7 +58,7 @@ exports.webhookCheckout = (req, res, next) => {
     event = stripe.webhooks.constructEvent(
       req.body,
       signature,
-      'whsec_CatDHKiC9ZOpp1aav0YdU1puaesOLi8E'
+      'whsec_9cc6cfc72db134d3d3b7ad9cc4021b2e5fe4b61f8aba9bf188ab12d759325b3f'
     );
   } catch (err) {
     return res.status(400).send(`Webhook error: ${err.message}`);
