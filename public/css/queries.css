@@ -8,7 +8,10 @@
   .hero {
     max-width: 120rem;
   }
-
+  .heading-login{
+  
+  font-size: 4rem;
+    }
   .heading-primary {
     font-size: 4.4rem;
   }
@@ -90,10 +93,10 @@
     /* box-shadow: .1rem .1rem .5rem .1rem rgb(77, 255, 0); */
   }
 
-  .delivered-meals {
+  /* .delivered-meals {
     justify-content: center;
     margin-top: 3.2rem;
-  }
+  } */
 
   .logos img {
     height: 2.4rem;
@@ -244,13 +247,14 @@
   .heading-login{
     justify-self: center;
       font-size: 2rem;
+      font-weight: normal;
     }
     .heading-h2{
       font-size: 1.8rem;
     }
   html {
     /* 8px / 16px = 0.5 = 50% */
-    font-size: 45%;
+    font-size: 48%;
   }
   .grid--2-cols,
   .grid--3-cols,
