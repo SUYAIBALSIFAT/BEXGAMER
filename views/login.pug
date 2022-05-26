@@ -1,16 +1,16 @@
 extends base
 block content
-  section.container.login
+  section.login
       .c2
         h1.heading-login LOGIN TO YOUR ACCOUNT
         h3.heading-h2
           | Don&apos;t have an account? 
-          a.links.span-p(href='#') Sign Up
-        form.form(action='#')
+          a.span-b.center-text(href='/signup') Sign Up
+        form.form(action='submit')
           input#email.input-f(type='email', placeholder='EMAIL', name='email', required='')
           input#PASSWORD.input-f(type='PASSWORD', placeholder='PASSWORD', name='PASSWORD', minlength='8', required='')
           h3.heading-h3
-            a.span-b(href='#') Forgot Password or Email?
+            a.span-b.center-text(href='#') Forgot Password or Email?
           button.btn.btn--green Login
 
   //- main.main

@@ -3,25 +3,22 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  row-gap: 22rem;
-  column-gap: 22rem;
+  row-gap: 3rem;
+  column-gap: 2rem;
   margin-bottom: 5rem;
-  padding: 5rem 11rem;
+  padding: 5rem 5rem;
   border-radius: 2rem;
-  box-shadow: 0rem 0rem 8rem 5rem #260b6e;
+  line-height: 5rem;
+  z-index: -1;
+  /* box-shadow: 0rem 0rem 8rem 5rem #260b6e; */
   background-color: rgba(40, 4, 139, 0.411);
   background-color: rgba(46, 43, 60, 0.325);
   background-color: rgba(0, 0, 0, 0.325);
 }
 .ts{
-  border-radius: 4rem;
-  border-left: 1px solid #7a7a7a;
-  border-right: 1px solid #7a7a7a;
-  box-shadow: 0rem 0rem 8rem 5rem #260b6e;
+  border-radius: .4rem;
+  box-shadow: 0rem 0rem .8rem .5rem #260b6e;
   transition: all 1s;
-}
-.ts:hover{
-  transform: scale(1.1);
 }
 .pf{
   letter-spacing: 8rem;
@@ -39,7 +36,6 @@
 }
 .tour-icon{
   color: #ff0b95;
-  color: #2fff00;
   width: 2rem;
   height: 2rem;
   transition: all;
@@ -47,6 +43,7 @@
 }
 .tour-icons{
   color: #2fff00;
+  color: #ff0b95;
   width: 2rem;
   height: 2rem;
   transition: all;
@@ -59,11 +56,13 @@ font-size: 1.4rem;
 color: rgb(155, 155, 155);
 }
 .tournament_d{
-  justify-self: end;
   display: grid;
   /* grid-template-columns: repeat(2,1fr); */
   /* grid-template-rows: repeat(4,min-content) ; */
-  /* justify-self: end; */
+  justify-self: center;
+  border-radius: 1rem;
+  padding: 3rem;
+  background-color: #250b6e5d;
   /* gap: 2rem; */
 }
 .tournament_li{
@@ -75,6 +74,7 @@ font-weight: 800;
 list-style: none;
 font-size: 2rem;
 font-weight: 100;
+color: #ff00a2;
 grid-row: 2;
 }
 .tournament-span{
@@ -113,10 +113,11 @@ gap: 2.8rem;
   border-bottom: 1px solid rgb(224, 3, 209);
   box-shadow: 0 1.2rem 4.4rem rgba(131, 54, 255, 0.616); 
   border-radius: 4rem;*/
-  border-right: 5px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
   display: grid;
   /* justify-content: center; */
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   row-gap: 3rem;
 }
 .tournament_info2{
@@ -128,6 +129,7 @@ gap: 2.8rem;
   display: grid;
   grid-template-columns: repeat(3,1fr);
  justify-items: center;
+ row-gap: 3rem;
 }
 .tournament_info2-h{
   grid-column: 1/-1;
@@ -139,7 +141,7 @@ gap: 2.8rem;
   grid-column: 1/-1;
   padding-right: 3rem;
   color: #5117f2;
-  color: #ffffff;
+  color: #555555;
   font-weight: 500;
 }
 .center{

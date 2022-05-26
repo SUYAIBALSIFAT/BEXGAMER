@@ -173,7 +173,7 @@ body {
   text-transform: capitalize;
   font-size: 3rem;
   line-height: 1.2;
-  color: #bbff00;
+  color: #ff00d0;
   margin-bottom: 3rem;
 }
 
@@ -190,6 +190,7 @@ body {
   font-size: 8.6rem;
   font-weight: 600;
   color: #390099ff;
+  color: rgba(50, 51, 52, 0.695);
   margin-bottom: 2.2rem;
 }
 
@@ -409,7 +410,7 @@ padding: 2rem 2rem;
     color: #ff0073;
   }
   .span-11{
-    color: #2fff00;
+    color: #fb00b8;
   }
   .mb{
     margin-bottom: 13rem;
@@ -418,7 +419,8 @@ padding: 2rem 2rem;
     font-family: Monoton;
     font-size: 2rem;
     color: #36b554;
-    color: #53DD6C;
+    color: #0f9b28;
+    letter-spacing: .5rem;
   }
   .borders{
     border-radius: 2rem;

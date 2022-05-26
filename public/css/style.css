@@ -130,8 +130,8 @@
   padding: 2.8rem 0 9.6rem 0;
   /* box-shadow: 0 1.2rem 4.4rem rgba(131, 54, 255, 0.616); */
   backface-visibility: hidden;
-  background-image:linear-gradient(90deg, rgba(0, 0, 0, 0.657) 100%, #1e026638 10%,rgba(77, 115, 192, 0.296) 90%),
-    url("../imgs/71724718.png");
+  background-image:linear-gradient(90deg, rgba(0, 0, 0, 0.574) 100%, #1e026638 10%,rgba(77, 115, 192, 0.296) 90%),
+    url("../imgs/COD.png");
     background-size: cover;
     background-position: center;
   border-radius: .4rem;
@@ -205,7 +205,7 @@
 /**************************/
 
 .section-how {
-  padding: 9.6rem 0;
+  padding: 0.6rem 0;
   background-color: #000000;
 }
 
@@ -288,7 +288,10 @@
 }
 
 .meal-content {
-  padding: 1rem;
+padding-top: 2rem;
+padding-bottom: 3.65rem;
+padding-left: 1.9rem;
+padding-right: 1rem;
 }
 
 .meal-tags {
@@ -332,7 +335,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 .XX{
   font-size: large;
@@ -350,9 +353,9 @@
   display: flex;
   font-weight: 700;
   letter-spacing: .01rem;
-  line-height: 3.2rem;
+  line-height:  4rem;
   align-items: center;
-  gap: 1.6rem;
+  gap: 2rem;
   /* margin-bottom: 1.5rem; */
 }
 .end{
@@ -394,7 +397,7 @@ border-radius: 4rem;
 
 }
 .testimonials-container {
-  padding: 9.6rem 4rem;
+  padding: 0.6rem 4rem;
 }
 
 .testimonials {

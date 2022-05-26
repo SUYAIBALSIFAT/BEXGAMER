@@ -1,14 +1,10 @@
 extends base
 block content
   section.login
-    div
-      h1.heading-login.center-text LOGIN TO YOUR ACCOUNT
-      h3.heading-h2.center-text
-        | Don&apos;t have an account? 
-        a.linksspan-p(href='#') Sign Up
-    form.form-signup(action="submit")
-      input#username.input-f(type='username' placeholder='username' name='username' required='')
-      input#email.input-f(type='email' placeholder='EMAIL' name='email' required='')
-      input#PASSWORD.input-f(type='password' placeholder='PASSWORD' name='PASSWORD' minlength='8' required='')
-      input#passwordConfirm.input-f(type='passwordConfirm' placeholder='passwordConfirm' name='passwordConfirm' minlength='8' required='')
-      button.btn.btn--green.center-text signup
+      .c2
+        h1.heading-login CERACT YOUR ACCOUNT
+        form.form-signup(action='submit')
+          input#email.input-f(type='email', placeholder='EMAIL', name='email', required='')
+          input#PASSWORD.input-f(type='PASSWORD', placeholder='PASSWORD', name='PASSWORD', minlength='8', required='')
+          input#passwordConfirm.input-f(type='passwordConfirm' placeholder='PASSWORD CONFIRM' name='passwordConfirm' minlength='8' required='')
+        button.btn.btn--green.center-text signup

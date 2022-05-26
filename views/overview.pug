@@ -11,13 +11,19 @@ block content
           | tournaments for mobile gamers. join the be x gamer community today and become x gamer. we work As
           | individual
           | providing a open platform for gamers To come together And participate in tournaments.
-        a.btn.btn--full.margin-right-sm(href='/login') Start gaming now
+        a.btnt.btn--tournament.margin-right-sm.mb(href='/login') Start gaming now
         .hash-tag
           p.text
             | # BE A 
             span.x  X 
             |  GAMER
       .hero-img-box
+  section.section-featured
+  .logos
+    img.img-logo(src='imgs/PUBG-LOGO.jpg' alt='Forbes logo')
+    img.img-logo(src='imgs/FIRE-FIRE-LOGO.jpg' alt='Techcrunch logo')
+    img.img-logo(src='imgs/CODL-LOGO-M.jpg' alt='The New York Times logo')
+
   section#tournaments.section-tournaments
   .center-text
     span.subheading.Tournaments
@@ -27,7 +33,7 @@ block content
       span.span-1 Your
       |  Game To 
       span.span-2 Partepate
-  .container.grid.grid--3-cols.margin-bottom-md
+  .container.grid.grid--3-cols.margin-bottom-md.met
    each Tournament in Tournaments 
     a.meal.link(href=`/tournament/${Tournament.slug}`) 
       img.meal-img(src=`../img/tours/${Tournament.imgCover}` alt='tournament-img')
@@ -35,7 +41,7 @@ block content
         .meal-tags
           span.tag.tag--vegetarian NEW
           p.XX
-            | Registration Ends : 
+            | 
             span.span-9  12:98:23
         p.meal-title= `${Tournament.name}`
         ul.meal-attributes
@@ -167,7 +173,7 @@ block content
             //-     option(value='podcast') Podcast
             //-     option(value='ad') Facebook ad
             //-     option(value='others') Others
-            a.btnt.btn--tournament(href='#') Start gaming now
+            a.btnt.btn--tournament(href='login') Start gaming now
         .cta-img-box(role='img' aria-label='Woman enjoying food')
 //-  main.main
 //-   .card-container
