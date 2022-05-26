@@ -102,9 +102,9 @@
     margin-top: 3.2rem;
   } */
 
-  .logos img {
+  /* .logos img {
     height: 2.4rem;
-  }
+  } */
 
   .step-number {
     font-size: 7.4rem;
@@ -302,7 +302,7 @@
   }
 
   .logos img {
-    height: 1.2rem;
+    height: 4.2rem;
   }
 
   .step-img-box:nth-child(2) {

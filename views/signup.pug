@@ -4,7 +4,8 @@ block content
       .c2
         h1.heading-login CERACT YOUR ACCOUNT
         form.form-signup(action='submit')
+          input#username.input-f(type='name', placeholder='username', name='username', required='')
           input#email.input-f(type='email', placeholder='EMAIL', name='email', required='')
           input#PASSWORD.input-f(type='PASSWORD', placeholder='PASSWORD', name='PASSWORD', minlength='8', required='')
-          input#passwordConfirm.input-f(type='passwordConfirm' placeholder='PASSWORD CONFIRM' name='passwordConfirm' minlength='8' required='')
-        button.btn.btn--green.center-text signup
+          input#passwordConfirm.input-f(type='PASSWORD' placeholder='PASSWORD CONFIRM' name='passwordConfirm' minlength='8' required='')
+          button.btn.btn--green.center-text signup

@@ -59,6 +59,7 @@ color: rgb(195, 0, 255);
   border: 1px solid rgb(255, 255, 255);
   transition: all 0.3s;
   background-color: #2727278b;
+  color: #fff;
 }
 .input-f:focus {
   outline: none;
@@ -91,11 +92,11 @@ color: rgb(195, 0, 255);
   -webkit-transform: translateY(-1px);
   transform: translateY(-1px);
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(86, 86, 86, 0.15);
 }
 
 .btn:focus {
-  outline: 1px solid #fff;
+  /* outline: 1px solid #fff; */
   background-color: #474747;
 }
 

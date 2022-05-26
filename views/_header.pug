@@ -1,7 +1,7 @@
 header.header
   div
    a.main-nav-link(href='/')
-    img.logo( src=`/imgs/x.png` alt='X GAMER LOGO')
+    img.logo( src=`../imgs/x.png` alt='X GAMER LOGO')
     span.game Gamer
   nav.main-nav
     ul.main-nav-list
@@ -13,7 +13,7 @@ header.header
         a.main-nav-link(href='#') DONATE US
         if user
           li.profie-navs
-            img.user(src=`/imgs/${user.photo}`, alt="user photo")
+            img.user(src=`../imgs/${user.photo}`, alt="user photo")
             section.nav-user
               div
                 a.profile-li-user(href='/me') Profile
@@ -31,9 +31,9 @@ header.header
         else
           li
            a.main-nav-link.nav-cta(href='/login') LOGIN / SIGNUP
-  button.btn-mobile-nav
-    ion-icon.icon-mobile-nav(name='menu-outline')
-    ion-icon.icon-mobile-nav(name='close-outline')
+            button.btn-mobile-nav
+              ion-icon.icon-mobile-nav(name='menu-outline')
+              ion-icon.icon-mobile-nav(name='close-outline')
 
 
 
