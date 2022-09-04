@@ -7,7 +7,7 @@ import { showAlert } from './alerts';
 
 const userDataForm = document.querySelector('.formp');
 const loginForm = document.querySelector('.form');
-const signupForm = document.querySelector('..form-signup');
+const signupForm = document.querySelector('.form-signup');
 const logOutBtn = document.querySelector('.nav__el--logout');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
